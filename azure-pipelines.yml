@@ -41,17 +41,16 @@ stages:
       displayName: 'npm install, build'
     - task: SonarQubePrepare@4
       inputs:
-          SonarQube: 'Chatapp'
-          scannerMode: 'CLI'
-          configMode: 'manual'
-          cliProjectKey: 'chatapp'
-          cliProjectName: 'Chatapplication'
-          cliSources: '.'
+        SonarQube: 'nodejsproject'
+        scannerMode: 'CLI'
+        configMode: 'manual'
+        cliProjectKey: 'Nodejsproject'
+        cliProjectName: 'Nodejsproject'
+        cliSources: '.'
     - task: SonarQubeAnalyze@4
     - task: SonarQubePublish@4
       inputs:
-        pollingTimeoutSec: '300'
-      
+        pollingTimeoutSec: '300' 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
